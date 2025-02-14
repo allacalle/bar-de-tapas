@@ -1,0 +1,86 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Color de fondo suave */
+    color: #333; /* Color de texto oscuro */
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    height: 60vh; /* Ajusta la altura del Hero Section */
+  }
+  
+  .hero-image {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    height: 100%; /* Hace que la imagen ocupe toda la altura del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra todo el área */
+    object-position: center; /* Centra la imagen */
+  }
+  
+  /* Contenido sobre la imagen */
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    text-align: center;
+    color: #fff; /* Color de texto blanco para destacar sobre la imagen */
+  }
+  
+  .hero-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: lighter;
+  }
+
+  .hero-content h2, .hero-content p {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 1), 0 0 25px rgba(0, 0, 0, 1), 0 0 5px rgba(0, 0, 0, 1);
+  }
+  
+  /* Sección Acerca del bar */
+  .about {
+    padding: 40px 20px;
+    background-color: #fff; /* Fondo blanco para esta sección */
+    color: #333;
+    text-align: center;
+  }
+  
+  .about h3 {
+    font-size: 2.5rem;
+    color: #ff8c00; /* Color naranja brillante */
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Botones, enlaces y otros elementos */
+  button, a {
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #ff8c00; /* Color que resalta */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  button:hover, a:hover {
+    background-color: #d76b00; /* Un tono más oscuro para el hover */
+  }
+  
