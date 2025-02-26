@@ -1,0 +1,121 @@
+/* navbar.css */
+
+/* Navbar principal */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px; /* Más padding para un look más espacioso */
+    background-color: var(--primary-color); /* Naranja profundo */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Logo */
+  .navbar .logo {
+    font-size: 2.2rem; /* Tamaño más grande */
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Georgia', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra para el texto */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto hover para el logo */
+  .navbar .logo:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+  }
+  
+  /* Contenedor de enlaces */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Más espacio entre enlaces */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo de los enlaces */
+  .nav-links li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px 20px; /* Más padding para un look más grande */
+    border-radius: 30px; /* Bordes más redondeados */
+    transition: all 0.3s ease; /* Transición suave para todos los efectos */
+    position: relative;
+  }
+  
+  /* Efecto hover de los enlaces */
+  .nav-links li a:hover {
+    color: var(--text-color); /* Texto gris oscuro */
+    background-color: var(--secondary-color); /* Fondo naranja vibrante */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más destacada */
+    transform: translateY(-3px); /* Efecto de levitación */
+  }
+  
+  /* Subrayado animado al hacer hover */
+  .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color); /* Turquesa para el subrayado */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links li a:hover::after {
+    width: 80%; /* Subrayado animado al hacer hover */
+  }
+  
+  /* Efecto activo (para la página actual) */
+  .nav-links li a.active {
+    color: var(--accent-color); /* Turquesa para resaltar */
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+  }
+  
+  /* Navbar en scroll (efecto dinámico) */
+  .navbar.scrolled {
+    background-color: rgba(26, 188, 156, 0.9); /* Turquesa semi-transparente */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive: Menú hamburguesa (para móviles) */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 20px; /* Menos padding en móviles */
+    }
+  
+    .navbar .logo {
+      font-size: 1.8rem; /* Tamaño más pequeño en móviles */
+    }
+  
+    .nav-links {
+      display: none; /* Oculta los enlaces en móviles */
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: var(--primary-color);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+    }
+  
+    .nav-links.active {
+      display: flex; /* Muestra los enlaces cuando el menú está activo */
+    }
+  
+    .nav-links li a {
+      padding: 8px 15px; /* Menos padding en móviles */
+      font-size: 1rem;
+    }
+  }

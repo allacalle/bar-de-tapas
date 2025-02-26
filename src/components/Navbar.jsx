@@ -1,12 +1,16 @@
+import '../css/navbar.css'; // Archivo de estilos para el Footer
+
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">La Tapa Mix</div>
       <ul className="nav-links">
-        <li><a href="#home">Inicio</a></li>
+        <li><Link to ="/">Inicio</Link></li>
         <li><a href="#menu">Menú</a></li>
-        <li><a href="#about">Sobre nosotros</a></li>
+        <li><Link to="/about">Sobre nosotros</Link></li>
         <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>

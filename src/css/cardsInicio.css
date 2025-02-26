@@ -2,15 +2,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  padding: 3rem 2rem;
+  background-image: url("../assets/images/fondo-cards.png"); /* Cambia por la ruta correcta */
+  background-repeat: no-repeat;
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-position: center; /* Centra la imagen */
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  margin-top: 50px; /* Ajusta según lo que necesites */
+  padding-top: 20px; /* Opcional, para que el contenido respire más */
+  margin-bottom: 50px; /* Ajusta según lo que necesites */
 }
 
 /* Tarjeta más grande */
 .card {
   display: flex;
   align-items: center;
-  width: 80%;
+  width: 90%;
   max-width: 900px;
   background: none; /* Quitamos el fondo del contenedor principal */
   overflow: hidden;

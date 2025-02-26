@@ -1,6 +1,6 @@
 // src/pages/Home.jsx
 import '../css/home.css';
-import imageHero from '../assets/images/imageHero.jpeg';
+import imageHero from '../assets/images/imageHero.png';
 
 
 const Home = () => {

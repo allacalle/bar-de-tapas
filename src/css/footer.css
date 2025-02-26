@@ -1,46 +1,86 @@
-.footer {
-    background-color: #1a1a1a;
-    color: white;
+/* Footer General */
+footer {
+    background-color: var(--primary-color); /* Usa el color principal para el fondo */
+    color: var(--background-color); /* Texto blanco sobre fondo naranja */
     padding: 2rem 1rem;
     text-align: center;
+    font-family: 'Arial', sans-serif;
   }
   
+  /* Contenido del footer */
   .footer-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 1rem;
+    gap: 2rem; /* Añade espacio entre las secciones */
   }
   
+  /* Secciones dentro del footer */
   .footer-section {
     margin: 1rem;
+    flex: 1 1 200px; /* Hace que cada sección sea flexible */
   }
   
+  /* Títulos de las secciones */
   .footer-section h3 {
+    font-size: 1.5rem; /* Mayor tamaño para los títulos */
+    color: var(--secondary-color); /* Naranja vibrante para los títulos */
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    text-transform: uppercase; /* Mayúsculas para los títulos */
   }
   
+  /* Listas dentro de las secciones */
   .footer-section ul {
     list-style: none;
     padding: 0;
   }
   
+  /* Items de la lista */
   .footer-section ul li {
     margin: 0.5rem 0;
   }
   
-  .footer-section ul li a {
-    color: white;
-    text-decoration: none;
+/* Enlaces dentro de las listas */
+.footer-section ul li a {
+    color: var(--background-color); /* Color blanco para los enlaces */
+    text-decoration: none; /* Eliminamos el subrayado por defecto */
+    font-weight: 400; /* Peso normal de la fuente */
+    font-size: 1rem; /* Tamaño moderado */
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Suavizamos la transición de color y subrayado */
+    display: inline-block; /* Los enlaces ocupan solo el espacio necesario */
+    padding: 0; /* Sin espacio extra */
   }
   
+  /* Efecto hover más sutil */
   .footer-section ul li a:hover {
-    color: #ffd700; /* Cambia el color al pasar el mouse */
+    color: var(--accent-color); /* Cambia el color a turquesa */
+    text-decoration: underline; /* Aparece el subrayado en el hover */
   }
   
+  /* Efecto al enfocarse en el enlace */
+  .footer-section ul li a:focus {
+    color: var(--accent-color); /* Color turquesa al enfocar */
+    text-decoration: underline; /* Subrayado al enfocar */
+    outline: none; /* Elimina el contorno de enfoque por defecto */
+  }
+  
+  
+
+  /* Footer Inferior */
   .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--secondary-color); /* Línea divisoria con color secundario */
     padding-top: 1rem;
     font-size: 0.9rem;
+    color: var(--text-color); /* Gris oscuro para el texto */
   }
+  
+  /* Si quieres hacer que el footer sea fijo en la parte inferior */
+  footer.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  }
+  
