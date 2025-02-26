@@ -1,15 +1,16 @@
 
 const Navbar = () => {
-    return (
-    <nav>
-        <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Menú de Tapas</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
-        </ul>
+  return (
+    <nav className="navbar">
+      <div className="logo">La Tapa Mix</div>
+      <ul className="nav-links">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#about">Sobre nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
     </nav>
-    );
-}
+  );
+};
 
 export default Navbar;

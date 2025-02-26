@@ -19,6 +19,8 @@ const Home = () => {
             Disfruta de una auténtica experiencia andaluza: tapas deliciosas,
             cerveza fresca y el mejor ambiente de Córdoba.
           </p>
+          <a href="#menu" className="hero-button">Descubre nuestras tapas</a>
+
         </div>
       </section>
 

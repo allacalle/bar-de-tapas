@@ -1,0 +1,92 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+}
+
+/* Tarjeta más grande */
+.card {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 900px;
+  background: none; /* Quitamos el fondo del contenedor principal */
+  overflow: hidden;
+  box-shadow: none; /* Quitamos sombras innecesarias */
+  border-radius: 0;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #e0c097;
+}
+
+/* Alternar posición */
+.card.left {
+  flex-direction: row;
+
+}
+
+.card.right {
+  flex-direction: row-reverse;
+
+}
+
+/* Imagen dentro de la tarjeta */
+.card-image {
+  width: 50%;
+  height: 350px; /* Imagen más grande */
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+/* Contenido del texto */
+.card-content {
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 248, 235, 0.9); /* Fondo tipo pergamino */
+  border: 3px solid #c9a66b; /* Borde dorado/marrón */
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar relieve */
+  position: relative;
+}
+
+
+
+.card-content h2 {
+  font-size: 2.5rem;
+  color: #b85c38;
+  font-family: 'Georgia', serif;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-content p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Borde animado para más impacto */
+.card-content::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px dashed #a67c52; /* Borde externo de adorno */
+  border-radius: 12px;
+  opacity: 0.6;
+}
+
+
+.card:hover::before {
+  height: 6px;
+}

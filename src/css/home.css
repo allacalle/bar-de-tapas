@@ -84,3 +84,21 @@ body {
     background-color: #d76b00; /* Un tono más oscuro para el hover */
   }
   
+
+  .hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ff5722; /* Color naranja para destacar */
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #e64a19; /* Color más oscuro en hover */
+  }

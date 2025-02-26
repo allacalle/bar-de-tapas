@@ -16,41 +16,70 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Estilos globales */
 body {
   font-family: 'Arial', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  padding-top: 60px; /* Para que el contenido no quede debajo del navbar */
   line-height: 1.6;
 }
 
-/* Estilos para la navegación */
-nav {
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
   background-color: var(--primary-color);
-  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
 
-nav ul {
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Georgia', serif;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 25px;
 }
 
-nav ul li {
-  margin: 0 20px;
+.nav-links li {
+  display: inline-block;
+  position: relative;
 }
 
-nav ul li a {
-  color: #ffffff;
+/* Estilo de los enlaces */
+.nav-links li a {
   text-decoration: none;
+  color: #ffffff;
   font-size: 1.2rem;
-  transition: color 0.3s;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: var(--accent-color);
+/* Efecto hover de los enlaces */
+.nav-links li a:hover {
+  color: var(--text-color); /* Texto gris oscuro */
+  background-color: var(--secondary-color); /* Fondo naranja vibrante */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más destacada */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
+
 
 /* Estilos para el contenido principal */
 .App {
@@ -63,3 +92,13 @@ h1 {
   font-size: 2.5rem;
   color: var(--primary-color);
 }
+
+h2, h3 {
+  color: var(--secondary-color);
+}
+
+p {
+  margin: 10px 0;
+}
+
+
