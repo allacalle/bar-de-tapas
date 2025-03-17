@@ -54,7 +54,7 @@
   /* Secciones dentro de la página */
   .about-section {
     margin-bottom: 30px;
-    border-left: 4px solid var(--primary-color); /* Naranja profundo */
+    /*border-left: 4px solid var(--primary-color); /* Naranja profundo */
     padding-left: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 5px;

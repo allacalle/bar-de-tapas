@@ -1,0 +1,59 @@
+/* src/css/testimonial.css */
+
+/* Contenedor principal de los testimonios */
+.testimonial-container {
+    display: flex; /* Cambiamos a flexbox */
+    flex-wrap: nowrap; /* Evita el salto de línea */
+    overflow-x: auto; /* Habilita desplazamiento horizontal si no caben */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px; /* Espacio lateral */
+    justify-content: center; /* Asegura que las tarjetas se alineen desde el inicio */
+    width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+  }
+  
+  /* Estilo de las tarjetas de testimonios */
+  .testimonial-card {
+    flex: 0 0 auto; /* Las tarjetas no se ajustan ni crecen */
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #e5e7eb; /* Borde visible */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 20px;
+    width: 300px; /* Ancho fijo para cada tarjeta */
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+    min-width: 300px; /* Asegura que las tarjetas no se reduzcan demasiado */
+  }
+  
+  /* Efecto hover en la tarjeta */
+  .testimonial-card:hover {
+    transform: translateY(-8px); /* Levantamiento al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+  }
+  
+  /* Estilo para la imagen del testimonio */
+  .testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Imagen circular */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    margin-bottom: 15px;
+    border: 3px solid #e5e7eb; /* Borde alrededor de la imagen */
+  }
+  
+  /* Texto del testimonio */
+  .testimonial-text {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
+    line-height: 1.4; /* Mejora la legibilidad */
+  }
+  
+  /* Autor del testimonio */
+  .testimonial-author {
+    font-size: 14px;
+    color: #555555;
+    font-style: italic;
+    margin-top: 5px;
+  }
+  

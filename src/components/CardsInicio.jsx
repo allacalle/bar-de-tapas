@@ -1,4 +1,5 @@
 import "../css/cardsInicio.css"; // Estilo para las tarjetas
+import React from "react";
 
 const CardsInicio = () => {
   const cards = [
