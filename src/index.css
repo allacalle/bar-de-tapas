@@ -4,7 +4,7 @@
 :root {
   --primary-color: #D35400;      /* Naranja profundo para acentos fuertes */
   --secondary-color: #F39C12;    /* Naranja vibrante para resaltar detalles */
-  --accent-color: #1ABC9C;       /* Turquesa para un toque fresco y contraste */
+  --accent-color: #e4f312;       /* Turquesa para un toque fresco y contraste */
   --text-color: #333333;         /* Gris oscuro para textos legibles */
   --background-color: #FFF9F4;   /* Un blanco cálido, casi cremoso, para el fondo */
 }
