@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "name": "Salmorejo Cordobés",
+      "description": "Crema fría de tomate y pan, típica de Córdoba.",
+      "image": "https://via.placeholder.com/250x150.png?text=Salmorejo",
+      "ingredients": ["Tomate", "Pan", "Ajo", "Aceite de oliva"],
+      "preparation": "Mezclar tomate triturado con pan remojado, ajo y aceite hasta obtener una textura cremosa. Servir frío.",
+      "category": "entrantes"
+    },
+    {
+      "id": 2,
+      "name": "Rabo de Toro",
+      "description": "Guiso tradicional de rabo de toro con vino tinto.",
+      "image": "https://via.placeholder.com/250x150.png?text=Rabo+de+Toro",
+      "ingredients": ["Rabo de toro", "Vino tinto", "Zanahorias", "Cebolla"],
+      "preparation": "Sellar el rabo de toro, añadir verduras y vino, y cocinar a fuego lento durante 3 horas.",
+      "category": "principales"
+    },
+    {
+      "id": 3,
+      "name": "Flamenquín",
+      "description": "Croqueta gigante rellena de jamón y queso, frita hasta dorar.",
+      "image": "https://via.placeholder.com/250x150.png?text=Flamenquín",
+      "ingredients": ["Jamón serrano", "Queso", "Pan rallado", "Huevo"],
+      "preparation": "Rellenar el flamenquín, empanizar y freír en aceite caliente.",
+      "category": "principales"
+    },
+    {
+      "id": 4,
+      "name": "Tortilla de Camarones",
+      "description": "Tortilla crujiente con camarones frescos.",
+      "image": "https://via.placeholder.com/250x150.png?text=Tortilla+Camarones",
+      "ingredients": ["Camarones", "Harina", "Huevo", "Cebolla"],
+      "preparation": "Mezclar camarones con harina y huevo, freír en sartén.",
+      "category": "entrantes"
+    },
+    {
+      "id": 5,
+      "name": "Leche Frita",
+      "description": "Postre tradicional con leche, canela y huevo.",
+      "image": "https://via.placeholder.com/250x150.png?text=Leche+Frita",
+      "ingredients": ["Leche", "Canela", "Huevo", "Azúcar"],
+      "preparation": "Cocinar la leche con canela, cortar en porciones y freír.",
+      "category": "postres"
+    }
+  ]

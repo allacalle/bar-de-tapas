@@ -1,6 +1,11 @@
 // src/pages/Home.jsx
+import React from 'react';
 import '../css/home.css';
 import imageHero from '../assets/images/imageHero.png';
+import MenuDestacado from '../components/MenuDestacado'; // Importa MenuDestacado
+import CardsInicio from '../components/cardsInicio';
+import TestimonialCards from '../components/TestimonialCards'; // Importa TestimonialCards
+import testimonialsData from '../data/testimonials.json'; // Importa los datos de testimonios
 
 
 const Home = () => {
@@ -32,6 +37,21 @@ const Home = () => {
           a disfrutar de un ambiente festivo, lleno de sabor y buena compañía.
         </p>
       </section>
+
+     {/* Nuevas secciones */}
+     <section className="menu-destacado-section">
+        <MenuDestacado />
+      </section>
+
+      <section className="cards-inicio-section">
+        <CardsInicio />
+      </section>
+
+      <section className="testimonials-section">
+        <TestimonialCards testimonials={testimonialsData} />
+      </section>
+
+
     </div>
   );
 };

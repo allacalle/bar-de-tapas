@@ -3,11 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
-import MenuDestacado from './components/MenuDestacado';
-import CardsInicio from './components/cardsInicio';
 import Footer from './components/Footer';
-import TestimonialCards from './components/TestimonialCards';
-import testimonialsData from '../data/testimonials.json';
 
 
 function App() {
@@ -20,10 +16,7 @@ function App() {
             path="/" 
             element={
               <>
-                <Home />
-                <MenuDestacado />
-                <CardsInicio />
-                <TestimonialCards testimonials={testimonialsData} />
+                <Home/>
               </>
             } 
           />

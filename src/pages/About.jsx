@@ -1,8 +1,7 @@
 import React from 'react';
 import TestimonialCards from '../components/TestimonialCards'; // Importa el componente
-import testimonialsData from '../../data/testimonials.json'; // Importa los datos
 import '../css/about.css'; // Estilo para la página de About
-
+import testimonialsData from '../data/testimonials.json'; // Importa los datos de los testimonios
 const About = () => {
   return (
     <div className="about-page">

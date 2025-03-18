@@ -1,3 +1,4 @@
+import React from "react";
 import "../css/menuDestacado.css"; // Estilo para las tarjetas
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
