@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Footer from './components/Footer';
-
+import Menu from './pages/Menu'; // Importa la página Menu
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
             } 
           />
           <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} /> {/* Nueva ruta */}
         </Routes>
         <Footer />
       </div>

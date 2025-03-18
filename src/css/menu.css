@@ -1,0 +1,13 @@
+/* src/css/menu.css */
+.menu-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .menu-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
