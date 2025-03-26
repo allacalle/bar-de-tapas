@@ -1,13 +1,62 @@
 /* src/css/menu.css */
 .menu-page {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.menu-title {
+  text-align: center;
+  color: #d35400;
+  margin-bottom: 2rem;
+}
+
+.tapas-grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Ajusta el número de columnas según el dispositivo */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* En móviles (pantallas < 768px) */
+@media (max-width: 768px) {
+  .tapas-grid {
+    grid-template-columns: 1fr; /* 1 columna */
   }
-  
-  .menu-title {
-    text-align: center;
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+}
+
+/* En tablets (pantallas 768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tapas-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
   }
+}
+
+/* En escritorios (pantallas > 1024px) */
+@media (min-width: 1024px) {
+  .tapas-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  }
+}
+
+/* Estilos de paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  background: #f39c12;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.pagination button.active {
+  background: #d35400;
+  transform: scale(1.1);
+}

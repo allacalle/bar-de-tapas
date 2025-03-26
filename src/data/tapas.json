@@ -1,47 +1,44 @@
 [
-    {
-      "id": 1,
-      "name": "Salmorejo Cordobés",
-      "description": "Crema fría de tomate y pan, típica de Córdoba.",
-      "image": "https://via.placeholder.com/250x150.png?text=Salmorejo",
-      "ingredients": ["Tomate", "Pan", "Ajo", "Aceite de oliva"],
-      "preparation": "Mezclar tomate triturado con pan remojado, ajo y aceite hasta obtener una textura cremosa. Servir frío.",
-      "category": "entrantes"
-    },
-    {
-      "id": 2,
-      "name": "Rabo de Toro",
-      "description": "Guiso tradicional de rabo de toro con vino tinto.",
-      "image": "https://via.placeholder.com/250x150.png?text=Rabo+de+Toro",
-      "ingredients": ["Rabo de toro", "Vino tinto", "Zanahorias", "Cebolla"],
-      "preparation": "Sellar el rabo de toro, añadir verduras y vino, y cocinar a fuego lento durante 3 horas.",
-      "category": "principales"
-    },
-    {
-      "id": 3,
-      "name": "Flamenquín",
-      "description": "Croqueta gigante rellena de jamón y queso, frita hasta dorar.",
-      "image": "https://via.placeholder.com/250x150.png?text=Flamenquín",
-      "ingredients": ["Jamón serrano", "Queso", "Pan rallado", "Huevo"],
-      "preparation": "Rellenar el flamenquín, empanizar y freír en aceite caliente.",
-      "category": "principales"
-    },
-    {
-      "id": 4,
-      "name": "Tortilla de Camarones",
-      "description": "Tortilla crujiente con camarones frescos.",
-      "image": "https://via.placeholder.com/250x150.png?text=Tortilla+Camarones",
-      "ingredients": ["Camarones", "Harina", "Huevo", "Cebolla"],
-      "preparation": "Mezclar camarones con harina y huevo, freír en sartén.",
-      "category": "entrantes"
-    },
-    {
-      "id": 5,
-      "name": "Leche Frita",
-      "description": "Postre tradicional con leche, canela y huevo.",
-      "image": "https://via.placeholder.com/250x150.png?text=Leche+Frita",
-      "ingredients": ["Leche", "Canela", "Huevo", "Azúcar"],
-      "preparation": "Cocinar la leche con canela, cortar en porciones y freír.",
-      "category": "postres"
-    }
-  ]
+  {
+    "id": 1,
+    "nombre": "Croquetas Ibéricas",
+    "descripcion": "Explosion de jamon en tu boca",
+    "imagen": "/assets/images/croquetas.png",
+    "categoria": "entrantes"
+  },
+  {
+    "id": 2,
+    "nombre": "Tortilla de Patatas",
+    "descripcion": "Clásico español con o sin cebolla",
+    "imagen": "/assets/images/tortilla.png",
+    "categoria": "principales"
+  },
+  {
+    "id": 3,
+    "nombre": "Salmorejo",
+    "descripcion": "La crema de tomate por excelencia",
+    "imagen": "/assets/images/salmorejo.png",
+    "categoria": "entrantes"
+  },
+  {
+    "id": 4,
+    "nombre": "Flamenquin",
+    "descripcion": "La mejor carne con el mejor jamon",
+    "imagen": "/assets/images/flamenquin.png",
+    "categoria": "principales"
+  },
+  {
+    "id": 5,
+    "nombre": "Berenjenas con Miel",
+    "descripcion": "El contraste perfecto entre lo dulce y lo salado en cada bocado",
+    "imagen": "/assets/images/berenjenasConMiel.png",
+    "categoria": "entrantes"
+  },
+  {
+    "id": 6,
+    "nombre": "Mini Brochetas de Rabo de Toro",
+    "descripcion": "Mini brochetas de rabo de toro con salsa, ¡toda la esencia de Córdoba en tu paladar!",
+    "imagen": "/assets/images/miniBrochetaRaboDeToro.png",
+    "categoria": "principales"
+  }
+]

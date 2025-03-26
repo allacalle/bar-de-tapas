@@ -1,39 +1,27 @@
+/* src/components/TapaCard.css */
 .tapa-card {
-    border: 2px solid #f39c12;
-    border-radius: 10px;
-    padding: 15px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fff9f4;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
-  .tapa-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .tapa-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .tapa-info {
-    text-align: center;
-  }
-  
-  .tapa-name {
-    color: #d35400;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-  }
-  
-  .tapa-description {
-    color: #555;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
+  border: 2px solid #f39c12;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff9f4;
+  height: 100%; /* Ocupa toda la altura del grid */
+}
+
+.tapa-image {
+  width: 100%;
+  height: 150px; /* Altura fija para móviles */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.tapa-name {
+  font-size: 1.1rem; /* Tamaño reducido para móviles */
+}
+
+.tapa-description {
+  font-size: 0.8rem; /* Tamaño reducido para móviles */
+  -webkit-line-clamp: 2; /* Limita a 2 líneas en móviles */
+}

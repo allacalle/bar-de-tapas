@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/navbar.css'; // Archivo de estilos para el Footer
-import logo from '../assets/images/logo.png'
+import logo from '/assets/images/logo.png'
 
 
 import { Link } from "react-router-dom";

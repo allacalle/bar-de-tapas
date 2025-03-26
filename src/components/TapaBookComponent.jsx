@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'; // Importa PropTypes
-import TapaCard from './TapaCard'; // Importa el componente TapaCard
+import TapaCard from './TapaCardComponent'; // Importa el componente TapaCard
 import '../css/tapaBook.css';
 
 const TapaBook = ({ tapas, itemsPerPage }) => {
