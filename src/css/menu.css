@@ -1,41 +1,40 @@
-/* src/css/menu.css */
+/* Estilo principal para la página del menú */
 .menu-page {
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Título del menú */
 .menu-title {
   text-align: center;
   color: #d35400;
   margin-bottom: 2rem;
 }
 
+/* Grid para las opciones del menú */
 .tapas-grid {
   display: grid;
   gap: 1.5rem;
-  /* Ajusta el número de columnas según el dispositivo */
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-/* En móviles (pantallas < 768px) */
+/* Media queries para responsividad */
 @media (max-width: 768px) {
   .tapas-grid {
-    grid-template-columns: 1fr; /* 1 columna */
+      grid-template-columns: 1fr; /* Una columna en móviles */
   }
 }
 
-/* En tablets (pantallas 768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .tapas-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+      grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
   }
 }
 
-/* En escritorios (pantallas > 1024px) */
 @media (min-width: 1024px) {
   .tapas-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en escritorios */
   }
 }
 

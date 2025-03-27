@@ -1,45 +1,96 @@
-/* src/css/tapaBook.css */
+/* Estilo principal para las tarjetas */
 .tapa-book {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-  }
-  
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 350px; /* Altura mínima para uniformidad */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Contenedor del grid */
+.tapa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Imágenes dentro de las tarjetas */
+.tapa-book img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Proporción cuadrada */
+}
+
+/* Títulos dentro de las tarjetas */
+.tapa-book h3 {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Descripciones dentro de las tarjetas */
+.tapa-book p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+  margin: 10px 0;
+  text-align: center;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.tapa-book:hover {
+  transform: translateY(-5px) scale(1.02); /* Levanta y agranda ligeramente */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* Botones de paginación */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
   .tapa-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas adaptables */
-    gap: 20px; /* Espacio entre tarjetas */
-    margin-bottom: 30px;
-  }
-  
-  .pagination-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px; /* Espacio entre botones */
-    margin-top: 20px;
-  }
-  
-  
-  .pagination-controls button {
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .pagination-controls button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
-  @media (max-width: 768px) {
-    .tapa-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Menor tamaño en móviles */
-    }
+  .tapa-book {
+      min-height: 300px; /* Altura mínima reducida para móviles */
   }
+}

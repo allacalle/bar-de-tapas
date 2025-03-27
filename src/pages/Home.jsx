@@ -3,7 +3,7 @@ import React from 'react';
 import '../css/home.css';
 import imageHero from '/assets/images/imageHero.png';
 import MenuDestacado from '../components/MenuDestacadoComponent'; // Importa MenuDestacado
-import CardsInicio from '../components/cardsInicio';
+import CardsInicio from '../components/CardsInicioComponent';
 import TestimonialCards from '../components/TestimonialCardsComponent'; // Importa TestimonialCards
 import testimonialsData from '../data/testimonials.json'; // Importa los datos de testimonios
 
