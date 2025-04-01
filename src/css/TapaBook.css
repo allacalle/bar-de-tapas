@@ -1,16 +1,42 @@
-/* Estilo principal para las tarjetas */
 .tapa-book {
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
   padding: 20px;
-  background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin: 10px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 400px; /* Altura fija para las tarjetas */
-  min-height: 600px; /* Altura mínima para contener 2 filas */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto;
+  min-height: 600px; /* Altura mínima para el libro */
+  overflow: hidden; /* Evita que el fondo se desborde */
+}
+
+/* Pseudo-elemento para el fondo escalado */
+.tapa-book::before {
+  content: '';
+  position: absolute;
+  top: -20%;    /* Desplazamiento arriba */
+  left: -8%;  /* Desplazamiento izquierda */
+  right: -8%; /* Desplazamiento derecha */
+  bottom: 0;  /* Elimina el desplazamiento inferior */
+  background: url('assets/images/BookBackground.png') no-repeat center bottom; /* Alinea la imagen abajo */
+  background-size: 100% auto; /* Escala el ancho al 100%, altura automática */
+  transform: scale(1.2); /* Escala reducida */
+  transform-origin: top center; /* Escala desde la parte superior */
+  z-index: -1;
+}
+
+/* Contenedor interno que simula las páginas del libro */
+.book-pages {
+  background-color: #fff; /* Color de las páginas */
+  border-radius: 8px; /* Bordes redondeados para las páginas */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+  padding: 20px; /* Espaciado interno para el contenido */
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Contenedor del grid */
@@ -18,7 +44,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
   grid-template-rows: repeat(2, auto); /* Altura automática para las filas */
-  margin-bottom: 20px; /* Espacio entre el grid y los botones */
+  gap: 15px; /* Espaciado entre tarjetas */
   overflow: hidden; /* Evitar que el contenido se desborde */
 }
 
@@ -38,35 +64,6 @@
   aspect-ratio: 1 / 1; /* Proporción cuadrada */
 }
 
-/* Títulos dentro de las tarjetas */
-.tapa-book h3 {
-  font-size: 1rem;
-  margin: 10px 0;
-  color: #333;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Descripciones dentro de las tarjetas */
-.tapa-book p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #555;
-  margin: 10px 0;
-  text-align: center;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-.tapa-book:hover {
-  transform: translateY(-5px) scale(1.02); /* Levanta y agranda ligeramente */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
-}
-
 /* Botones de paginación */
 .pagination-controls {
   display: flex;
@@ -75,7 +72,6 @@
   gap: 15px;
   margin-top: auto;
   padding-bottom: 10px; /* Añade un poco de espacio al final */
-
 }
 
 .pagination-controls button {
@@ -103,6 +99,7 @@
   .tapa-book {
     min-height: 500px; /* Altura mínima reducida para móviles */
   }
+
   .pagination-controls button {
     padding: 6px 12px; /* Botones aún más pequeños en móviles */
     font-size: 0.8rem;
