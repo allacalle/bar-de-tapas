@@ -1,15 +1,27 @@
-/* Estilo principal para la página del menú */
+/* menu.css */
 .menu-page {
-  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Título del menú */
 .menu-title {
   text-align: center;
-  color: #d35400;
-  margin-bottom: 2rem;
+  color: #f39c12;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.book-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 800px; /* Ancho máximo para el libro */
+  margin: 0 auto;
 }
 
 /* Grid para las opciones del menú */

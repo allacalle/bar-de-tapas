@@ -5,30 +5,39 @@ import '../css/tapaCard.css';
 
 const TapaCard = ({ tapa, onClick }) => {
   return (
-    <div className="tapa-card" onClick={() => onClick?.(tapa)}>
-      <img 
-        src={tapa.imagen} 
-        alt={`Imagen de ${tapa.nombre}`} 
-        className="tapa-image"
-      />
+    <div 
+      className="tapa-card" 
+      onClick={() => onClick?.(tapa)}
+      tabIndex="0" // Para navegación con teclado
+      role="button" // Accesibilidad
+    >
+      {/* Imagen con efecto vintage */}
+      <div className="tapa-image-container">
+        <img 
+          src={tapa.imagen} 
+          alt={`Receta: ${tapa.nombre}`} 
+          className="tapa-image"
+        />
+      </div>
+      
+      {/* Información de la receta */}
       <div className="tapa-info">
-        <h3 className="tapa-name">{tapa.nombre}</h3> 
-        <p className="tapa-description">{tapa.descripcion}</p> 
+        <h3 className="tapa-name">{tapa.nombre}</h3>
+        <p className="tapa-description">{tapa.descripcion}</p>
       </div>
     </div>
   );
 };
 
-// Validación de props
+// Validación de props (mantén solo lo que usas)
 TapaCard.propTypes = {
   tapa: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    nombre: PropTypes.string.isRequired, // ✔️ Cambiamos "name" por "nombre"
-    descripcion: PropTypes.string.isRequired, // ✔️ Cambiamos "description" por "descripcion"
-    imagen: PropTypes.string.isRequired, // ✔️ Cambiamos "image" por "imagen"
-    categoria: PropTypes.string,
+    nombre: PropTypes.string.isRequired,
+    descripcion: PropTypes.string.isRequired,
+    imagen: PropTypes.string.isRequired,
   }).isRequired,
-  onClick: PropTypes.func, // Función opcional
+  onClick: PropTypes.func, // Mantén esto si usas el click
 };
 
 export default TapaCard;

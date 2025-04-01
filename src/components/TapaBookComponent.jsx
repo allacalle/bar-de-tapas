@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'; // Importa PropTypes
 import TapaCard from './TapaCardComponent'; // Importa el componente TapaCard
-import '../css/tapaBook.css';
+import '../css/tapaBook.css'; // Importa los estilos
 
 const TapaBook = ({ tapas, itemsPerPage }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -49,7 +49,7 @@ TapaBook.propTypes = {
 
 // Valores por defecto (evita errores si no se pasa itemsPerPage)
 TapaBook.defaultProps = {
-  itemsPerPage: 6,
+  itemsPerPage: 4, // Fijamos siempre 4 elementos (2x2)
 };
 
 export default TapaBook;
