@@ -52,6 +52,36 @@
   gap: 15px; /* Espaciado reducido */
   margin-bottom: 1.5rem;
 }
+
+.tapa-info {
+  display: flex;
+  flex-wrap: wrap; /* Permite ajuste en pantallas pequeñas */
+  align-items: baseline; /* Alinea elementos en la base */
+  gap: 8px; /* Espacio entre elementos */
+}
+
+.tapa-name {
+  flex: 1 1 auto; /* El nombre ocupa el espacio disponible */
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0; /* Permite el truncamiento */
+}
+
+.price-tag {
+  flex: 0 0 auto; /* El precio mantiene su tamaño */
+  background-color: #4CAF50;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+
 /* Media query para móviles */
 @media (max-width: 768px) {
   .tapa-grid {
@@ -65,4 +95,15 @@
   .tapa-card img {
     height: 100px; /* Altura reducida para móviles */
   }
+
+  .tapa-name {
+    font-size: 0.85rem;
+  }
+  
+  .price-tag {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+    margin-left: 4px;
+  }
+
 }

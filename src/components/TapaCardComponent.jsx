@@ -23,6 +23,7 @@ const TapaCard = ({ tapa, onClick }) => {
       {/* Información de la receta */}
       <div className="tapa-info">
         <h3 className="tapa-name">{tapa.nombre}</h3>
+        <div className="price-tag">€{tapa.precio.toFixed(2)}</div>
         <p className="tapa-description">{tapa.descripcion}</p>
       </div>
     </div>
@@ -36,6 +37,8 @@ TapaCard.propTypes = {
     nombre: PropTypes.string.isRequired,
     descripcion: PropTypes.string.isRequired,
     imagen: PropTypes.string.isRequired,
+    precio: PropTypes.number.isRequired, // Nuevo
+
   }).isRequired,
   onClick: PropTypes.func, // Mantén esto si usas el click
 };

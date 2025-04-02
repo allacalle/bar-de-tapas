@@ -4,224 +4,289 @@
       "nombre": "Croquetas Ibéricas",
       "descripcion": "Deliciosas croquetas elaboradas con una mezcla cremosa de jamón ibérico desmenuzado, bechamel casera y un toque de nuez moscada.",
       "imagen": "/assets/images/platos/croquetas.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio" : 5.50,
+      "alergenos": ["gluten", "lactosa"]
     },
     {
       "id": 2,
       "nombre": "Tortilla de Patatas",
       "descripcion": "Esta tortilla está hecha con patatas doradas, cebolla caramelizada (opcional) y huevos frescos, cocinada a la perfección para lograr un interior jugoso y un exterior dorado.",
       "imagen": "/assets/images/platos/tortilla.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 6.50,
+      "alergenos": ["huevos"]
     },
     {
       "id": 3,
       "nombre": "Salmorejo",
       "descripcion": "La crema fría de tomate por excelencia, originaria de Córdoba. Elaborado con tomates maduros, pan, aceite de oliva virgen extra y ajo, servido con trozos de jamón serrano y huevo duro picado.",
       "imagen": "/assets/images/platos/salmorejo.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 4.00,
+      "alergenos": ["gluten", "huevos"]
     },
     {
       "id": 4,
       "nombre": "Flamenquin",
       "descripcion": "Una obra maestra de la cocina cordobesa. Un filete fino relleno de jamón serrano y queso, envuelto en una capa de carne magra y empanizado hasta alcanzar una textura crujiente.",
       "imagen": "/assets/images/platos/flamenquin.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 8.50,
+      "alergenos": ["gluten", "lacteos"]
     },
     {
       "id": 5,
       "nombre": "Berenjenas con Miel",
       "descripcion": "El contraste perfecto entre lo dulce y lo salado en cada bocado. Berenjenas fritas y crujientes, bañadas en una miel de caña espesa y espolvoreadas con sésamo tostado.",
       "imagen": "/assets/images/platos/berenjenasConMiel.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.00,
+      "alergenos": []
     },
     {
       "id": 6,
       "nombre": "Mini Brochetas de Rabo de Toro",
       "descripcion": "Mini brochetas de rabo de toro con salsa, ¡toda la esencia de Córdoba en tu paladar!",
       "imagen": "/assets/images/platos/miniBrochetaRaboDeToro.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 9.00,
+      "alergenos": ["gluten"]
     },
     {
       "id": 7,
       "nombre": "Mini-Lasaña Mediterránea",
       "descripcion": "Una versión miniatura de lasaña con capas de pasta fresca, salsa boloñesa y bechamel cremosa.",
       "imagen": "/assets/images/platos/mini-lasagna.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 9.00,
+      "alergenos": ["gluten", "soja"]
     },
     {
       "id": 8,
       "nombre": "Patata Asada con Romesco",
       "descripcion": "Una patata asada al horno, rellena con una salsa romesco tradicional española y un toque de perejil fresco.",
       "imagen": "/assets/images/platos/patata-romesco.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 4.50,
+      "alergenos": ["frutos secos", "gluten"]
     },
     {
       "id": 9,
       "nombre": "Salpicón de Marisco",
       "descripcion": "Un salpicón fresco con trozos de pulpo tierno, gambas cocidas y una vinagreta cítrica con toques de pimentón ahumado.",
       "imagen": "/assets/images/platos/salpicon-marisco.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 10.00,
+      "alergenos": ["mariscos", "pescado"]
     },
     {
       "id": 10,
       "nombre": "Taco Mediterráneo",
       "descripcion": "Un taco pequeño con tortilla de trigo, relleno de ensaladilla rusa y jamón serrano.",
       "imagen": "/assets/images/platos/taco-mediterraneo.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 3.50,
+      "alergenos": ["gluten", "huevos", "lacteos"]
+      
     },
     {
       "id": 11,
       "nombre": "Bao de Pollo al Ajillo",
       "descripcion": "Un bao suave y esponjoso relleno de pollo marinado al ajillo y un toque de mayonesa de lima.",
       "imagen": "/assets/images/platos/bao-pollo-ajillo.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 6.00,
+      "alergenos": ["gluten", "soja"]
     },
     {
       "id": 12,
       "nombre": "Ensaladilla Rusa Vegana",
       "descripcion": "Una versión vegana de la ensaladilla rusa con guisantes, zanahorias, patatas cocidas y mayonesa vegana.",
       "imagen": "/assets/images/platos/ensaladilla-vegana.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 4.00,
+      "alergenos": ["mostaza", "soja"]
     },
     {
       "id": 13,
       "nombre": "Cardos con Salsa de Nueces Ahumadas",
       "descripcion": "Cardos tiernos cocidos al vapor, servidos con una salsa cremosa de nueces ahumadas y un toque de pimentón dulce.",
       "imagen": "/assets/images/platos/cardos-nueces.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 7.00,
+      "alergenos": ["frutos secos", "lacteos"]
     },
     {
       "id": 14,
       "nombre": "Pimientos Rellenos de Quinoa y Espinacas",
       "descripcion": "Pimientos miniatura rellenos de quinoa salteada con espinacas frescas y un toque de comino.",
       "imagen": "/assets/images/platos/pimientos-quinoa.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.00,
+      "alergenos": []
     },
     {
       "id": 15,
       "nombre": "Calabacín Relleno de Bechamel Vegana y Almendras Tostadas",
       "descripcion": "Mitades de calabacín asado rellenas de una bechamel vegana cremosa y cubiertas con almendras tostadas crujientes.",
       "imagen": "/assets/images/platos/calabacin-bechamel.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 6.50,
+      "alergenos": ["frutos secos"]
     },
     {
       "id": 16,
       "nombre": "Croquetas Veganas de Seitán",
       "descripcion": "Croquetas veganas rellenas de seitán desmenuzado con un sofrito de cebolla y pimiento, envueltas en un exterior crujiente de pan rallado integral.",
       "imagen": "/assets/images/platos/croquetas-seitan.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.50,
+      "alergenos": ["gluten"]
     },
     {
       "id": 17,
       "nombre": "Buñuelos de Garbanzos Especiados",
       "descripcion": "Buñuelos crujientes hechos con garbanzos triturados, especias mediterráneas y un toque de cilantro fresco.",
       "imagen": "/assets/images/platos/bunuelos-garbanzos.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.50,
+      "alergenos": ["gluten"]
     },
     {
       "id": 18,
       "nombre": "Empanadillas Argentinas de Humita",
       "descripcion": "Pequeñas empanadillas rellenas de humita (una mezcla cremosa de choclo/mazorca, cebolla y especias), horneadas hasta dorar.",
       "imagen": "/assets/images/platos/empanadillas-humita.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 4.50,
+      "alergenos": ["gluten"]
     },
     {
       "id": 19,
       "nombre": "Tostón con Aguacate y Frijoles Colombianos",
       "descripcion": "Un tostón (plátano verde frito y aplastado) crujiente, coronado con una mezcla cremosa de aguacate y frijoles colombianos, aderezado con un toque de limón y cilantro fresco.",
       "imagen": "/assets/images/platos/toston-aguacate.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.00,
+      "alergenos": []
     },
     {
       "id": 20,
       "nombre": "Mini-Tacos de Cochinita Pibil",
       "descripcion": "Pequeños tacos con tortilla de maíz, rellenos de cochinita pibil (cerdo marinado en achiote y jugo de naranja) y decorados con cebolla morada curtida.",
       "imagen": "/assets/images/platos/tacos-cochinita.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 7.00,
+      "alergenos": []
     },
     {
       "id": 21,
       "nombre": "Arepitas de Queso con Guasacaca Venezolana",
       "descripcion": "Pequeñas arepas rellenas de queso fresco, servidas con una salsa guasacaca (aguacate, cilantro, cebolla y limón).",
       "imagen": "/assets/images/platos/arepas-guasaca.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 4.50,
+      "alergenos": ["lacteos"]
     },
     {
       "id": 22,
       "nombre": "Ceviche Criollo en Totopos Peruanos",
       "descripcion": "Una versión mini de ceviche peruano (pescado marinado en limón, cebolla morada y cilantro), servido sobre totopos de maíz crocante.",
       "imagen": "/assets/images/platos/ceviche-totopos.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 8.00,
+      "alergenos": ["pescado", "mariscos"]
     },
     {
       "id": 23,
       "nombre": "Choripán en Miniatura con Chimichurri",
       "descripcion": "Un mini chorizo a la plancha servido en un panecillo pequeño, acompañado de una salsa chimichurri casera.",
       "imagen": "/assets/images/platos/choripan-mini.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 5.50,
+      "alergenos": ["gluten"]
     },
     {
       "id": 24,
       "nombre": "Falafel Mediterráneo con Tahini",
       "descripcion": "Bocados crujientes de falafel hechos con garbanzos y hierbas frescas, acompañados de una salsa tahini cremosa.",
       "imagen": "/assets/images/platos/falafel-tahini.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.00,
+      "alergenos": ["sésamo"]
     },
     {
       "id": 25,
       "nombre": "Samosas Indias de Espinacas y Queso Fresco",
       "descripcion": "Triángulos crujientes de masa rellenos de espinacas frescas y queso paneer, con un toque de especias indias.",
       "imagen": "/assets/images/platos/samosas-espinacas.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 4.50,
+      "alergenos": ["gluten", "lacteos"]
     },
     {
       "id": 26,
       "nombre": "Mini-Kebab Turco",
       "descripcion": "Un pequeño pan de pita relleno de carne vegetal marinada en especias turcas (como comino y pimentón), acompañado de una salsa de yogur vegano.",
       "imagen": "/assets/images/platos/mini-kebab.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 6.50,
+      "alergenos": ["gluten"]
     },
     {
       "id": 27,
       "nombre": "Tempura de Camote Japonés",
       "descripcion": "Rodajas finas de camote (batata) rebozadas en tempura crujiente, servidas con una salsa ponzu cítrica.",
       "imagen": "/assets/images/platos/tempura-camote.webp",
-      "categoria": "entrantes"
+      "categoria": "entrantes",
+      "precio": 5.00,
+      "alergenos": ["gluten"]
     },
     {
       "id": 28,
       "nombre": "Mini Moussaka Griega Vegana",
       "descripcion": "Una mini moussaka griega hecha con berenjenas asadas, salsa de tomate especiada y una capa de bechamel vegana gratinada.",
       "imagen": "/assets/images/platos/mini-moussaka-vegana.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 7.00,
+      "alergenos": ["gluten"]
     },
     {
       "id": 29,
       "nombre": "Minihamburguesas de Kimchi Coreano",
       "descripcion": "Pequeñas hamburguesas con una base de carne vegetal sazonada con kimchi coreano, servidas en un panecillo miniatura con un toque de salsa gochujang (picante) y cebollino fresco.",
       "imagen": "/assets/images/platos/miniburgers-kimchi.webp",
-      "categoria": "principales"
+      "categoria": "principales",
+      "precio": 6.00,
+      "alergenos": ["gluten", "soja"]
     },
     {
         "id": 30,
         "nombre": "Brocheta de Frutas Tropicales con Miel de Romero",
         "descripcion": "Una brocheta pequeña con trozos frescos de piña, mango y fresas, bañada con una miel de romero ligeramente caramelizada.",
         "imagen": "/assets/images/platos/brocheta-frutas-tropicales.webp",
-        "categoria": "postres"
+        "categoria": "postres",
+        "precio": 4.00,
+        "alergenos": []
       },
       {
         "id": 31,
         "nombre": "Mini Tartaletas de Chocolate y Frambuesas",
         "descripcion": "Pequeñas tartaletas de masa crujiente rellenas de ganache de chocolate oscuro, decoradas con frambuesas frescas y un toque de polvo de cacao.",
         "imagen": "/assets/images/platos/mini-tartaletas-chocolate-frambuesas.webp",
-        "categoria": "postres"
+        "categoria": "postres",
+        "precio": 3.50,
+        "alergenos": ["gluten", "lacteos"]
       },
       {
         "id": 32,
         "nombre": "Mini Cheesecakes de Maracuyá",
         "descripcion": "Mini cheesecakes de base crujiente de galleta, con un cremoso relleno de queso y un toque ácido de mermelada de maracuyá en la parte superior.",
         "categoria": "postres",
-        "imagen": "/assets/images/platos/mini-cheesecakes-maracuya.webp"
+        "imagen": "/assets/images/platos/mini-cheesecakes-maracuya.webp",
+        "precio": 4.00,
+        "alergenos": ["gluten", "lacteos", "huevos"]
 
       }
 

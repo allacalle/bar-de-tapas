@@ -16,10 +16,10 @@
 .tapa-book::before {
   content: '';
   position: absolute;
-  top: -20%;    /* Desplazamiento arriba */
-  left: -8%;  /* Desplazamiento izquierda */
+  top: -10%;    /* Desplazamiento arriba */
+  left: -8%;  /* Desplazamientosa izquierda */
   right: -8%; /* Desplazamiento derecha */
-  bottom: 0;  /* Elimina el desplazamiento inferior */
+  bottom: -0%;  /* Elimina el sdesplazamiento inferior */
   background: url('assets/images/BookBackground.png') no-repeat center bottom; /* Alinea la imagen abajo */
   background-size: 100% auto; /* Escala el ancho al 100%, altura automática */
   transform: scale(1.2); /* Escala reducida */
@@ -104,4 +104,7 @@
     padding: 6px 12px; /* Botones aún más pequeños en móviles */
     font-size: 0.8rem;
   }
+  body {
+    background: none; /* Elimina el fondo en móviles */
+}
 }
