@@ -1,5 +1,6 @@
 // src/pages/Home.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // Importa Link
 import '../css/home.css';
 import imageHero from '/assets/images/imageHero.png';
 import MenuDestacado from '../components/MenuDestacadoComponent'; // Importa MenuDestacado
@@ -24,7 +25,7 @@ const Home = () => {
             Disfruta de una auténtica experiencia andaluza: tapas deliciosas,
             cerveza fresca y el mejor ambiente de Córdoba.
           </p>
-          <a href="#menu" className="hero-button">Descubre nuestras tapas</a>
+          <Link to="/menu" className="hero-button"> Descubre nuestras tapa</Link>
 
         </div>
       </section>

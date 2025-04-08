@@ -1,12 +1,49 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types'; // Importa PropTypes
-import TapaCard from './TapaCardComponent'; // Importa el componente TapaCard
-import '../css/tapaBook.css'; // Importa los estilos
+import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import TapaCard from './TapaCardComponent';
+import '../css/tapaBook.css';
 
 const TapaBook = ({ tapas, itemsPerPage }) => {
-  const [currentPage, setCurrentPage] = useState(0);
+  // Estado inicial basado en sessionStorage
+  const initialState = () => {
+    const savedData = sessionStorage.getItem('tapaBookState');
+    if (savedData) {
+      const { page } = JSON.parse(savedData);
+      return page;
+    }
+    return 0; // Valor por defecto si no hay datos guardados
+  };
 
-  // Asegurar que tapas sea un array (evitar errores)
+  const [currentPage, setCurrentPage] = useState(initialState());
+
+  // Guardar el estado en sessionStorage
+  useEffect(() => {
+    const saveState = () => {
+      sessionStorage.setItem('tapaBookState', JSON.stringify({
+        page: currentPage,
+        scroll: window.pageYOffset
+      }));
+    };
+
+    saveState();
+    window.addEventListener('beforeunload', saveState);
+
+    return () => {
+      window.removeEventListener('beforeunload', saveState);
+      saveState();
+    };
+  }, [currentPage]);
+
+  // Restaurar el scroll
+  useEffect(() => {
+    const savedData = sessionStorage.getItem('tapaBookState');
+    if (savedData) {
+      const { scroll } = JSON.parse(savedData);
+      window.scrollTo({ top: scroll, behavior: 'auto' });
+    }
+  }, []);
+
   const safeTapas = Array.isArray(tapas) ? tapas : [];
   const totalPages = Math.ceil(safeTapas.length / itemsPerPage);
 
@@ -19,18 +56,24 @@ const TapaBook = ({ tapas, itemsPerPage }) => {
     <div className="tapa-book">
       <div className="tapa-grid">
         {paginatedTapas.map((tapa) => (
-          <TapaCard key={tapa.id} tapa={tapa} />
+          <Link
+            key={tapa.id}
+            to={`/tapa/${tapa.id}`}
+            className="tarjeta-link"
+          >
+            <TapaCard key={tapa.id} tapa={tapa} />
+          </Link>
         ))}
       </div>
       <div className="pagination-controls">
-        <button 
+        <button
           onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))}
           disabled={currentPage === 0}
         >
           Anterior
         </button>
         <span>Página {currentPage + 1} de {totalPages}</span>
-        <button 
+        <button
           onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages - 1))}
           disabled={currentPage === totalPages - 1}
         >
@@ -41,15 +84,13 @@ const TapaBook = ({ tapas, itemsPerPage }) => {
   );
 };
 
-// Validación de props
 TapaBook.propTypes = {
   tapas: PropTypes.arrayOf(PropTypes.object).isRequired,
   itemsPerPage: PropTypes.number,
 };
 
-// Valores por defecto (evita errores si no se pasa itemsPerPage)
 TapaBook.defaultProps = {
-  itemsPerPage: 4, // Fijamos siempre 4 elementos (2x2)
+  itemsPerPage: 4,
 };
 
 export default TapaBook;

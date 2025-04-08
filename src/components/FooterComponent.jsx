@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/footer.css'; // Archivo de estilos para el Footer
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -22,11 +23,11 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Enlaces</h3>
           <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#menu">Menú</a></li>
-            <li><a href="#about">Sobre nosotros</a></li>
-            <li><a href="#contact">Contacto</a></li>
-          </ul>
+        <li><Link to="/" >Inicio</Link></li>
+        <li><Link to="/menu" >Menú </Link></li>
+        <li><Link to="/about" >Sobre nosotros</Link></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
         </div>
       </div>
       <div className="footer-bottom">

@@ -54,6 +54,13 @@
   height: auto; /* Altura automática */
 }
 
+/*
+.tapa-grid a {
+  text-decoration: none;
+  color: inherit;
+}
+  */
+
 /* Imágenes dentro de las tarjetas */
 .tapa-book img {
   max-width: 100%;
@@ -89,6 +96,29 @@
   background-color: #ddd;
   cursor: not-allowed;
 }
+
+/* En tu archivo tapaBook.css (o donde tengas los estilos del Book) */
+
+/* Reset de estilos heredados para .tarjeta-link */
+.tapa-grid .tarjeta-link {
+  /* Neutraliza estilos heredados */
+  color: var(--text-color) !important; /* Color de texto gris oscuro */
+  background-color: transparent !important;
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Reset para estados hover/focus */
+.tapa-grid .tarjeta-link:hover, 
+.tapa-grid .tarjeta-link:focus {
+  background-color: transparent !important;
+  color: var(--text-color) !important;
+  transform: none !important;
+  box-shadow: none !important; /* O define tu propio efecto */
+}
+
+
 
 /* Media query para móviles */
 @media (max-width: 768px) {
