@@ -7,6 +7,7 @@ import About from './pages/About';
 import Footer from './components/FooterComponent';
 import Menu from './pages/Menu';
 import TapaCardDetallada from './components/TapaCardDetalladaComponent';
+import Contacto from './pages/Contacto';
 
 // Componente ScrollToTop (ahora recibe estado y función para actualizar)
 const ScrollToTop = ({ shouldScroll, resetScroll }) => {
@@ -54,6 +55,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/tapa/:id" element={<TapaCardDetallada />} />
+          <Route path="/contacto" element={<Contacto />} />
+          {/* Ruta no encontrada */}
         </Routes>
         <Footer />
       </div>

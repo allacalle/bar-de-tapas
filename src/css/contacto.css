@@ -1,0 +1,14 @@
+.contactPage {
+    padding: 3rem 0;
+    background: #f8f9fa;
+  }
+  
+  .contactInfo {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .contactInfo p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+  }

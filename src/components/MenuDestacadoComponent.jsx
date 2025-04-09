@@ -4,7 +4,7 @@ import "../css/menuDestacado.css";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import tapasData from '../data/tapas.json'; // Importa el JSON
+import tapasData from '../data/platos.json';
 
 const MenuDestacado = () => {
   // Configuración del carrusel (mantén la misma)
