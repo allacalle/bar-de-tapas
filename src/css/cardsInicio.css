@@ -2,85 +2,105 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("/assets/images/fondo-cards.png"); /* Cambia por la ruta correcta */
+  background-image: url("/assets/images/fondo-cards.png");
   background-repeat: no-repeat;
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-position: center; /* Centra la imagen */
+  background-size: cover;
+  background-position: center;
   gap: 1.5rem;
   padding: 2rem 1rem;
-  margin-top: 50px; /* Ajusta según lo que necesites */
-  padding-top: 20px; /* Opcional, para que el contenido respire más */
-  margin-bottom: 50px; /* Ajusta según lo que necesites */
+  margin: 50px 0;
+  position: relative; /* Para efectos de capa */
 }
 
-/* Tarjeta más grande */
 .card {
   display: flex;
   align-items: center;
   width: 90%;
   max-width: 900px;
-  background: none; /* Quitamos el fondo del contenedor principal */
+  background: none;
   overflow: hidden;
-  box-shadow: none; /* Quitamos sombras innecesarias */
   border-radius: 0;
+  transition: transform 0.3s ease;
+  position: relative;
+  flex-direction: row; /* Valor por defecto */
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    flex-direction: column !important; /* Forzamos columna en móviles */
+    max-width: 100%;
+  }
 }
 
-/* Efecto al pasar el mouse */
+/* Efecto hover optimizado */
 .card:hover {
-  transform: translateY(-10px);
-  border-color: #e0c097;
+  transform: translateY(-5px); /* Menos movimiento en móviles */
 }
 
-/* Alternar posición */
-.card.left {
-  flex-direction: row;
-
-}
-
-.card.right {
-  flex-direction: row-reverse;
-
-}
-
-/* Imagen dentro de la tarjeta */
+/* Ajustes para imágenes */
 .card-image {
   width: 50%;
-  height: 350px; /* Imagen más grande */
+  height: 350px;
   background-size: cover;
   background-position: center;
   border-radius: 15px;
+  transition: transform 0.3s ease;
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 300px;
+  }
+  
+  @media (max-width: 480px) {
+    height: 250px;
+  }
 }
 
-/* Contenido del texto */
+/* Contenido responsivo */
 .card-content {
   width: 50%;
   padding: 2rem;
   text-align: center;
-  background: rgba(255, 248, 235, 0.9); /* Fondo tipo pergamino */
-  border: 3px solid #c9a66b; /* Borde dorado/marrón */
+  background: rgba(255, 248, 235, 0.9);
+  border: 3px solid #c9a66b;
   border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar relieve */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   position: relative;
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 1.5rem;
+    margin: 15px auto 0;
+  }
 }
 
-
-
+/* Ajustes en tipografía */
 .card-content h2 {
   font-size: 2.5rem;
   color: #b85c38;
   font-family: 'Georgia', serif;
   margin-bottom: 15px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.75rem;
+  }
 }
 
 .card-content p {
   font-size: 1.4rem;
   line-height: 1.8;
-  font-weight: 500;
-  color: #444;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
-/* Borde animado para más impacto */
+/* Borde animado optimizado */
 .card-content::before {
   content: "";
   position: absolute;
@@ -88,12 +108,42 @@
   left: -10px;
   right: -10px;
   bottom: -10px;
-  border: 2px dashed #a67c52; /* Borde externo de adorno */
+  border: 2px dashed #a67c52;
   border-radius: 12px;
   opacity: 0.6;
+  transition: all 0.3s ease;
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    bottom: -7px;
+  }
 }
 
+/* Efecto hover mejorado */
+.card:hover .card-image {
+  transform: scale(1.05);
+}
 
-.card:hover::before {
-  height: 6px;
+/* Alternancia de posición */
+.card.left {
+  flex-direction: row;
+}
+
+.card.right {
+  flex-direction: row-reverse;
+}
+
+/* Optimización para pantallas pequeñas */
+@media (max-width: 768px) {
+  .cards-container {
+    padding: 1.5rem 0.5rem;
+    margin: 30px 0;
+  }
+  
+  .card.left, .card.right {
+    flex-direction: column !important;
+  }
 }

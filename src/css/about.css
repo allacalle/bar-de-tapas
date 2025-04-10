@@ -1,125 +1,83 @@
-/* about.css */
+/* about.css Responsive con efecto preservado */
 
-/* Usamos las mismas variables de color que en index.css */
-:root {
-    --primary-color: #D35400;      /* Naranja profundo para acentos fuertes */
-    --secondary-color: #F39C12;    /* Naranja vibrante para resaltar detalles */
-    --accent-color: #e4f312;       /* Turquesa para un toque fresco y contraste */
-    --text-color: #333333;         /* Gris oscuro para textos legibles */
-    --background-color: #FFF9F4;   /* Un blanco cálido, casi cremoso, para el fondo */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 2px solid var(--secondary-color);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(to right, #f9f7f3, #ffffff);
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+      max-width: 95%;
+      padding: 25px;
+      border-radius: 12px;
   }
   
-  /* Contenedor principal de la página */
-  .about-page {
-    padding: 60px 20px;
-    background-color: var(--background-color);
-    font-family: 'Arial', sans-serif; /* Mantenemos la fuente de index.css */
+  /* Optimización para móviles pequeños */
+  @media (max-width: 480px) {
+      border-radius: 10px;
+      padding: 20px;
+  }
+}
+
+/* Borde animado preservado y mejorado */
+.about-container::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 2px dashed var(--secondary-color);
+  border-radius: 10px;
+  pointer-events: none;
+  animation: dash-border 3s infinite linear;
+  
+  /* Ajustes responsive */
+  @media (max-width: 768px) {
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
   }
   
-  /* Contenedor de la carta de tapas */
-  .about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border: 2px solid var(--secondary-color); /* Usamos el naranja vibrante */
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-    background-image: linear-gradient(to right, #f9f7f3, #ffffff);
+  @media (max-width: 480px) {
+      top: 7px;
+      left: 7px;
+      right: 7px;
+      bottom: 7px;
   }
-  
-  /* Título principal */
-  .about-title {
-    text-align: center;
-    font-size: 3rem;
-    color: var(--primary-color); /* Naranja profundo */
-    margin-bottom: 30px;
-    font-family: 'Georgia', serif; /* Mantenemos la fuente de index.css */
-    font-weight: 700;
-    letter-spacing: 1px;
+}
+
+/* Animación del borde */
+@keyframes dash-border {
+  0% {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
   }
-  
-  /* Descripción principal */
-  .about-description {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--text-color); /* Gris oscuro */
-    line-height: 1.8;
-    margin-bottom: 40px;
-    font-style: italic;
+  50% {
+      stroke-dashoffset: 500;
   }
-  
-  /* Secciones dentro de la página */
-  .about-section {
-    margin-bottom: 30px;
-    /*border-left: 4px solid var(--primary-color); /* Naranja profundo */
-    padding-left: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    padding: 20px;
-    position: relative;
-  }
-  
-  /* Efecto hover en las secciones */
-  .about-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-  }
-  
-  /* Títulos dentro de cada sección */
-  .section-title {
-    font-size: 2rem;
-    color: var(--primary-color); /* Naranja profundo */
-    margin-bottom: 15px;
-    font-family: 'Georgia', serif; /* Mantenemos la fuente de index.css */
-    font-weight: 600;
-  }
-  
-  /* Texto dentro de cada sección */
-  .section-text {
-    font-size: 1.1rem;
-    color: var(--text-color); /* Gris oscuro */
-    line-height: 1.8;
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif; /* Mantenemos la fuente de index.css */
-  }
-  
-  /* Detalles visuales para el borde alrededor de la carta */
-  .about-container::before {
-    content: '';
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 2px dashed var(--secondary-color); /* Naranja vibrante */
-    border-radius: 10px;
-    pointer-events: none;
-    animation: dash-border 3s infinite linear;
-  }
-  
-  /* Animación de borde punteado */
-  @keyframes dash-border {
-    0% {
+  100% {
       stroke-dashoffset: 0;
-    }
-    50% {
-      stroke-dashoffset: 15;
-    }
-    100% {
-      stroke-dashoffset: 0;
-    }
   }
+}
+
+/* Ajustes en imágenes */
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   
-  /* Imágenes decorativas */
-  .about-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+      margin-top: 15px;
   }
+}

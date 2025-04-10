@@ -20,7 +20,7 @@
   left: -8%;  /* Desplazamientosa izquierda */
   right: -8%; /* Desplazamiento derecha */
   bottom: -0%;  /* Elimina el sdesplazamiento inferior */
-  background: url('assets/images/BookBackground.png') no-repeat center bottom; /* Alinea la imagen abajo */
+  git reset --hard origin/main
   background-size: 100% auto; /* Escala el ancho al 100%, altura automática */
   transform: scale(1.2); /* Escala reducida */
   transform-origin: top center; /* Escala desde la parte superior */

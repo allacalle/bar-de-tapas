@@ -2,11 +2,11 @@
 
 /* Variables: define la paleta de colores y algunas tipografías */
 :root {
-  --primary-color: #D35400;      /* Naranja profundo para acentos fuertes */
-  --secondary-color: #F39C12;    /* Naranja vibrante para resaltar detalles */
-  --accent-color: #e4f312;       /* Turquesa para un toque fresco y contraste */
-  --text-color: #333333;         /* Gris oscuro para textos legibles */
-  --background-color: #FFF9F4;   /* Un blanco cálido, casi cremoso, para el fondo */
+  --primary-color: #D35400;
+  --secondary-color: #F39C12;
+  --accent-color: #e4f312;
+  --text-color: #333333;
+  --background-color: #FFF9F4;
 }
 
 /* Reset básico para márgenes y paddings */
@@ -16,19 +16,25 @@
   box-sizing: border-box;
 }
 
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background-color) !important; /* ¡Forzamos el color de fondo! */
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Estilos globales */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: var(--background-color);
   color: var(--text-color);
-  padding-top: 60px; /* Para que el contenido no quede debajo del navbar */
   line-height: 1.6;
 }
 
+/* Navbar */
 /* Navbar */
 .navbar {
   position: sticky;
@@ -85,6 +91,7 @@ body {
 .App {
   padding: 20px;
   text-align: center;
+  min-height: 100vh;
 }
 
 h1 {
@@ -100,5 +107,3 @@ h2, h3 {
 p {
   margin: 10px 0;
 }
-
-
