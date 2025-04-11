@@ -1,23 +1,62 @@
-import { Link } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive'; // Para detección responsive
 import TapaCard from './TapaCardComponent';
 import '../css/tapaBook.css';
 
 const TapaBook = ({ tapas, itemsPerPage }) => {
-  // Estado inicial basado en sessionStorage
-  const initialState = () => {
-    const savedData = sessionStorage.getItem('tapaBookState');
-    if (savedData) {
-      const { page } = JSON.parse(savedData);
-      return page;
+  const navigate = useNavigate();
+  // Detección para móvil
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  // Nueva detección para tamaño intermedio (tablet)
+  const isTablet = useMediaQuery({ minWidth: 769, maxWidth: 1024 });
+
+  // Items por página dinámicos
+  const dynamicItemsPerPage = isMobile ? 1 : isTablet ? 2 : itemsPerPage;
+  const safeTapas = Array.isArray(tapas) ? tapas : [];
+  const totalPages = Math.ceil(safeTapas.length / dynamicItemsPerPage);
+
+  const getInitialPage = () => {
+    try {
+      const savedData = sessionStorage.getItem('tapaBookState');
+      if (savedData) {
+        return JSON.parse(savedData).page || 0;
+      }
+      const lastVisitedTapaId = sessionStorage.getItem('lastVisitedTapaId');
+      if (lastVisitedTapaId) {
+        const index = safeTapas.findIndex(tapa => tapa.id === parseInt(lastVisitedTapaId));
+        if (index !== -1) {
+          return Math.floor(index / dynamicItemsPerPage);
+        }
+      }
+      return 0;
+    } catch (error) {
+      console.error('Error loading state:', error);
+      return 0;
     }
-    return 0; // Valor por defecto si no hay datos guardados
   };
 
-  const [currentPage, setCurrentPage] = useState(initialState());
+  const [currentPage, setCurrentPage] = useState(getInitialPage());
+  const [setScreenWidth] = useState(window.innerWidth);
 
-  // Guardar el estado en sessionStorage
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const newDynamicItemsPerPage = isMobile ? 1 : isTablet ? 2 : itemsPerPage;
+    const newTotalPages = Math.ceil(safeTapas.length / newDynamicItemsPerPage);
+    if (currentPage >= newTotalPages && newTotalPages > 0) {
+      setCurrentPage(newTotalPages - 1);
+    }
+  }, [isMobile, isTablet, safeTapas.length, currentPage, itemsPerPage]);
+
   useEffect(() => {
     const saveState = () => {
       sessionStorage.setItem('tapaBookState', JSON.stringify({
@@ -26,58 +65,85 @@ const TapaBook = ({ tapas, itemsPerPage }) => {
       }));
     };
 
-    saveState();
     window.addEventListener('beforeunload', saveState);
-
-    return () => {
-      window.removeEventListener('beforeunload', saveState);
-      saveState();
-    };
+    return () => window.removeEventListener('beforeunload', saveState);
   }, [currentPage]);
 
-  // Restaurar el scroll
   useEffect(() => {
-    const savedData = sessionStorage.getItem('tapaBookState');
-    if (savedData) {
-      const { scroll } = JSON.parse(savedData);
-      window.scrollTo({ top: scroll, behavior: 'auto' });
+    const savedScroll = sessionStorage.getItem('tapaBookState')?.scroll;
+    if (savedScroll) {
+      window.scrollTo({ top: parseInt(savedScroll), behavior: 'auto' });
+      sessionStorage.removeItem('tapaBookState');
     }
+    sessionStorage.removeItem('lastVisitedTapaId');
   }, []);
 
-  const safeTapas = Array.isArray(tapas) ? tapas : [];
-  const totalPages = Math.ceil(safeTapas.length / itemsPerPage);
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleTapaClick = (tapaId) => {
+    sessionStorage.setItem('lastVisitedTapaId', tapaId);
+    sessionStorage.setItem('tapaBookState', JSON.stringify({ page: currentPage, scroll: window.pageYOffset }));
+    navigate(`/tapa/${tapaId}`);
+  };
 
   const paginatedTapas = safeTapas.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
+    currentPage * dynamicItemsPerPage,
+    (currentPage + 1) * dynamicItemsPerPage
   );
 
   return (
     <div className="tapa-book">
       <div className="tapa-grid">
         {paginatedTapas.map((tapa) => (
-          <Link
-            key={tapa.id}
-            to={`/tapa/${tapa.id}`}
-            className="tarjeta-link"
-          >
-            <TapaCard key={tapa.id} tapa={tapa} />
-          </Link>
+          <div key={tapa.id} className="tarjeta-link" onClick={() => handleTapaClick(tapa.id)} style={{ cursor: 'pointer' }}>
+            <TapaCard tapa={tapa} />
+          </div>
         ))}
       </div>
+
       <div className="pagination-controls">
         <button
-          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))}
+          onClick={() => handlePageChange(Math.max(currentPage - 1, 0))}
           disabled={currentPage === 0}
+          aria-label="Página anterior"
+          className="pagination-button"
         >
-          Anterior
+          {isMobile ? '⟨' : 'Anterior'}
         </button>
-        <span>Página {currentPage + 1} de {totalPages}</span>
+
+        <div className="page-indicator">
+          {Array.from({ length: totalPages }).map((_, index) => {
+            const firstTapaOfPage = safeTapas[index * dynamicItemsPerPage];
+            return (
+              firstTapaOfPage && firstTapaOfPage.imagen && (
+                <button
+                  key={index}
+                  className={`page-thumbnail-button ${index === currentPage ? 'active' : ''}`}
+                  onClick={() => handlePageChange(index)}
+                  aria-label={`Ir a página ${index + 1}`}
+                  aria-current={index === currentPage ? 'page' : undefined}
+                >
+                  <img
+                    src={firstTapaOfPage.imagen}
+                    alt={firstTapaOfPage.nombre}
+                    className="page-thumbnail"
+                  />
+                </button>
+              )
+            );
+          })}
+        </div>
+
         <button
-          onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages - 1))}
+          onClick={() => handlePageChange(Math.min(currentPage + 1, totalPages - 1))}
           disabled={currentPage === totalPages - 1}
+          aria-label="Página siguiente"
+          className="pagination-button"
         >
-          Siguiente
+          {isMobile ? '⟩' : 'Siguiente'}
         </button>
       </div>
     </div>
@@ -85,7 +151,13 @@ const TapaBook = ({ tapas, itemsPerPage }) => {
 };
 
 TapaBook.propTypes = {
-  tapas: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tapas: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      nombre: PropTypes.string.isRequired,
+      imagen: PropTypes.string,
+    })
+  ).isRequired,
   itemsPerPage: PropTypes.number,
 };
 

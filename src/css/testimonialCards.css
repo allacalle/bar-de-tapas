@@ -1,59 +1,80 @@
-/* src/css/testimonial.css */
-
 /* Contenedor principal de los testimonios */
 .testimonial-container {
-    display: flex; /* Cambiamos a flexbox */
-    flex-wrap: nowrap; /* Evita el salto de línea */
-    overflow-x: auto; /* Habilita desplazamiento horizontal si no caben */
-    gap: 20px; /* Espacio entre las tarjetas */
-    padding: 20px; /* Espacio lateral */
-    justify-content: center; /* Asegura que las tarjetas se alineen desde el inicio */
-    width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
-  }
-  
-  /* Estilo de las tarjetas de testimonios */
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se apilen verticalmente */
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 20px; /* Espacio lateral */
+  justify-content: center; /* Centra las tarjetas */
+  width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+}
+
+/* Estilo de las tarjetas de testimonios */
+.testimonial-card {
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(33.333% - 40px); /* 3 tarjetas por fila en escritorio */
+  min-width: 280px; /* Ancho mínimo para evitar contracciones excesivas */
+}
+
+/* Efecto hover en la tarjeta */
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para la imagen del testimonio */
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #e5e7eb;
+}
+
+/* Texto del testimonio */
+.testimonial-text {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Autor del testimonio */
+.testimonial-author {
+  font-size: 14px;
+  color: #555555;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .testimonial-card {
-    flex: 0 0 auto; /* Las tarjetas no se ajustan ni crecen */
-    background-color: #ffffff; /* Fondo blanco */
-    border: 2px solid #e5e7eb; /* Borde visible */
-    border-radius: 12px; /* Bordes redondeados */
-    padding: 20px;
-    width: 300px; /* Ancho fijo para cada tarjeta */
-    text-align: center;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
-    min-width: 300px; /* Asegura que las tarjetas no se reduzcan demasiado */
+    flex: 1 1 calc(50% - 40px); /* 2 tarjetas por fila en pantallas medianas */
   }
-  
-  /* Efecto hover en la tarjeta */
-  .testimonial-card:hover {
-    transform: translateY(-8px); /* Levantamiento al pasar el ratón */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    flex: 1 1 100%; /* 1 tarjeta por fila en móviles */
   }
-  
-  /* Estilo para la imagen del testimonio */
+
   .testimonial-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Imagen circular */
-    object-fit: cover; /* Ajusta la imagen sin deformarla */
-    margin-bottom: 15px;
-    border: 3px solid #e5e7eb; /* Borde alrededor de la imagen */
+    width: 80px; /* Imagen más pequeña en móviles */
+    height: 80px;
   }
-  
-  /* Texto del testimonio */
+
   .testimonial-text {
-    font-size: 16px;
-    color: #333333;
-    margin-bottom: 10px;
-    line-height: 1.4; /* Mejora la legibilidad */
+    font-size: 14px; /* Texto más pequeño en móviles */
   }
-  
-  /* Autor del testimonio */
+
   .testimonial-author {
-    font-size: 14px;
-    color: #555555;
-    font-style: italic;
-    margin-top: 5px;
+    font-size: 12px; /* Autor más pequeño en móviles */
   }
-  
+}

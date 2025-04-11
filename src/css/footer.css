@@ -1,4 +1,4 @@
-/* Footer Estilo Minimalista - Espaciado Mejorado */
+/* Footer Estilo Coherente con Navbar */
 .footer {
   background-color: var(--primary-color);
   color: var(--background-color);
@@ -21,17 +21,18 @@
   position: relative;
 }
 
-/* Líneas separadoras más sutiles */
+/* Líneas separadoras */
 .footer-content > .footer-section:not(:first-child)::before {
   content: "";
   position: absolute;
   top: 15%;
-  left: -1.25rem; /* Posicionamiento mejorado */
+  left: -1.25rem;
   height: 70%;
   width: 1px;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Títulos */
 .footer-section h3 {
   color: var(--secondary-color);
   font-size: 1.1rem;
@@ -42,6 +43,7 @@
   letter-spacing: 0.5px;
 }
 
+/* Texto normal */
 .footer-section p {
   margin: 0.6rem 0;
   line-height: 1.5;
@@ -49,50 +51,57 @@
   opacity: 0.9;
 }
 
+/* Listas */
 .footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Elementos de lista */
 .footer-section li {
-  margin: 0.8rem 0; /* Más espacio entre elementos */
+  margin: 0.8rem 0;
 }
 
-/* Enlaces mejorados */
-.footer-social-link,
-.footer-links-list .footer-link {
+/* Enlaces generales (tanto <a> como <Link>) */
+.footer-section a,
+.footer-section .footer-link {
   color: inherit;
   text-decoration: none;
   font-size: 0.9rem;
   transition: all 0.25s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.3rem 0;
+  padding: 0.4rem 1rem;
   line-height: 1.4;
-  width: fit-content;
+  border-radius: 8px;
+  margin: 0.2rem 0;
 }
 
-.footer-social-link:hover,
-.footer-links-list .footer-link:hover {
-  color: var(--secondary-color);
-  transform: translateX(5px);
-  text-decoration: none;
+/* Hover igual que navbar */
+.footer-section a:hover,
+.footer-section .footer-link:hover {
+  background-color: var(--accent-color) !important;
+  color: #000 !important;
+  box-shadow: 0 5px 15px rgba(255, 165, 0, 0.6);
+  transform: scale(1.05) translateY(-2px);
 }
 
-/* Iconos más balanceados */
-.footer-social-link svg {
+/* Iconos sociales */
+.footer-section a svg {
   width: 18px;
   height: 18px;
   fill: currentColor;
-  transition: transform 0.2s ease;
+  transition: all 0.25s ease;
 }
 
-.footer-social-link:hover svg {
+.footer-section a:hover svg {
+  fill: #000 !important;
   transform: translateX(3px);
 }
 
+/* Sección inferior */
 .footer-bottom {
   text-align: center;
   padding-top: 2rem;
@@ -103,6 +112,7 @@
   letter-spacing: 0.3px;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .footer {
     padding: 2.5rem 1rem 1.5rem;
@@ -127,19 +137,18 @@
     margin-bottom: 1rem;
   }
 
-  .footer-social-link,
-  .footer-links-list .footer-link {
-    margin: 0 auto;
+  .footer-section a,
+  .footer-section .footer-link {
     justify-content: center;
-    width: auto;
-    padding: 0.4rem 0;
+    width: 100%;
+    padding: 0.6rem 1.2rem;
   }
 
   .footer-section li {
     margin: 0.9rem 0;
   }
 
-  .footer-social-link svg {
+  .footer-section a svg {
     width: 20px;
     height: 20px;
   }
